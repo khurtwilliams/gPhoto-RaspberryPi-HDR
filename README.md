@@ -3,17 +3,15 @@ gPhoto-RaspberryPi-HDR
 
 Utility to capture exposure bracketed images with a Raspberry for use in HDR photography
 
-This project is related to my original blog post here:
-
-http://islandinthenet.com/2013/02/18/hdr-photography-with-a-raspberry-pi/
+This project is related to my [blog post](http://islandinthenet.com/2013/02/18/hdr-photography-with-a-raspberry-pi/).
 
 *February 2013*
 
 This HDR solution is based on projects and ideas from several places
 
 Project 
-gphoto2-timelapse - dwiel (https://github.com/dwiel) and http://dwiel.net/blog/raspberry-pi-timelapse-camera/
-gpio from WiringPi: An implementation of most of the Arduino Wiring functions for the Raspberry Pi - https://projects.drogon.net/raspberry-pi/wiringpi/
+[gphoto2-timelapse - dwiel](https://github.com/dwiel) and [Zach's blog post](http://dwiel.net/blog/raspberry-pi-timelapse-camera/).
+[gpio from WiringPi: An implementation of most of the Arduino Wiring functions for the Raspberry Pi](https://projects.drogon.net/raspberry-pi/wiringpi/).
 I found the information at thes link helpful
 
 http://rpi.tnet.com/project/hardware/project001
@@ -47,4 +45,4 @@ sudo update-rc.d rc.hdr defaults
 
 *ADDITIONAL INFORMATION & AUTHOR*
 
-http://islandinthenet.com/2013/02/18/hdr-photography-with-a-raspberry-pi/
+[HDR PHOTOGRAPHY WITH RASPBERRY PI AND GPHOTO2 – REVISION 2](http://islandinthenet.com/2013/02/18/hdr-photography-with-a-raspberry-pi/)
