@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Gphoto-raspberrypi-hdr by khurtwilliams</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Gphoto-raspberrypi-hdr</h1>
+        <p>Utility to capture exposure bracketed images with a Raspberry for use in HDR photography</p>
+
+        <p class="view"><a href="https://github.com/khurtwilliams/gPhoto-RaspberryPi-HDR">View the Project on GitHub <small>khurtwilliams/gPhoto-RaspberryPi-HDR</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/khurtwilliams/gPhoto-RaspberryPi-HDR/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/khurtwilliams/gPhoto-RaspberryPi-HDR/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/khurtwilliams/gPhoto-RaspberryPi-HDR">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>gPhoto-RaspberryPi-HDR</h1>
+
+<p>Utility to capture exposure bracketed images with a Raspberry for use in HDR photography</p>
+
+<p><em>February 2013</em></p>
+
+<p>This HDR solution is based on projects and ideas from several places</p>
+
+<p>Project 
+gphoto2-timelapse - dwiel (<a href="https://github.com/dwiel">https://github.com/dwiel</a>) and <a href="http://dwiel.net/blog/raspberry-pi-timelapse-camera/">http://dwiel.net/blog/raspberry-pi-timelapse-camera/</a>
+gpio from WiringPi: An implementation of most of the Arduino Wiring functions for the Raspberry Pi - <a href="https://projects.drogon.net/raspberry-pi/wiringpi/">https://projects.drogon.net/raspberry-pi/wiringpi/</a>
+I found the information at thes link helpful</p>
+
+<p><a href="http://rpi.tnet.com/project/hardware/project001">http://rpi.tnet.com/project/hardware/project001</a>
+<a href="http://elinux.org/RPi_Low-level_peripherals#GPIO_Driving_Example_.28Bash_shell_script.2C_using_sysfs.2C_part_of_the_raspbian_operating_system.29">http://elinux.org/RPi_Low-level_peripherals#GPIO_Driving_Example_.28Bash_shell_script.2C_using_sysfs.2C_part_of_the_raspbian_operating_system.29</a></p>
+
+<p><em>DESCRIPTION</em></p>
+
+<p>gphoto2-hdr allows you to create HDR photography using the Raspberry Pi (<a href="http://www.raspberrypi.org/">http://www.raspberrypi.org/</a>), supported DSLR camera connected via USB (<a href="http://gphoto.org/proj/libgphoto2/support.php">http://gphoto.org/proj/libgphoto2/support.php</a>), and the gphoto2 unix tool (<a href="http://www.gphoto.org/">http://www.gphoto.org/</a>).</p>
+
+<p><em>Installation</em></p>
+
+<p>Download and compile the WiringPi code to create gpio. You will need this to control the GPIO pins on the RPi and a switch to signal the main script to do it's work.</p>
+
+<p>You will also need to install usbutils - Linux USB utilities - to obtain lsusb.  lsusb  is  a utility for displaying information about USB buses in the system and the devices connected to them. I found lsusb more useful for detecting when a camera was attached to the RPi and turned on.  I could have used gphoto2 with the autodetect switch but I found lsusb was faster.</p>
+
+<p>You will also need to compile usbreset.  This handy piece of code helped reset the USB interface to the Nikon camera in between brackets sets.  I found that without usbreset that gphoto2 would generate a lot of errors using the Nikon.</p>
+
+<p>You will need to install Perl to run the HDR scripts.  This might already be a part of your library.</p>
+
+<p><em>USE</em></p>
+
+<p>Once everything is installed, you need to tweak the script a bit to get it to work with different cameras. For example, I used lsusb to specific USB ID for my Nikon D40.  I used that in the script.  You will also need to determine the proper gphotos2 parameters for you camera.  Once you have the camera specific parameters and functions in place, you can use the Perl scripts to begin taking images.</p>
+
+<p>perl hdr.pl</p>
+
+<p>There is also an rc script which you can use to start the HDR script automatically whenever the computer (raspberry pi) is turned on.  To setup this feature run the following commands:</p>
+
+<p>sudo ln ./rc.hdr /etc/init.d/rc.hdr
+cd /etc/init.d/
+sudo update-rc.d rc.hdr defaults</p>
+
+<p><em>ADDITIONAL INFORMATION &amp; AUTHOR</em></p>
+
+<p><a href="http://islandinthenet.com/2013/02/18/hdr-photography-with-a-raspberry-pi/">http://islandinthenet.com/2013/02/18/hdr-photography-with-a-raspberry-pi/</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/khurtwilliams">khurtwilliams</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
