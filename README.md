@@ -11,7 +11,9 @@ This HDR solution is based on projects and ideas from several places
 
 Project 
 [gphoto2-timelapse - dwiel](https://github.com/dwiel) and [Zach's blog post](http://dwiel.net/blog/raspberry-pi-timelapse-camera/).
+
 [gpio from WiringPi: An implementation of most of the Arduino Wiring functions for the Raspberry Pi](https://projects.drogon.net/raspberry-pi/wiringpi/).
+
 I found the information at thes link helpful
 
 http://rpi.tnet.com/project/hardware/project001
