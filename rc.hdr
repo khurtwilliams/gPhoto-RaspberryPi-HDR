@@ -1,0 +1,81 @@
+#!/bin/bash
+
+#The user that will run
+RUN_AS=pi
+
+#Clean name of the script to execute
+CLEAN_NAME=TIMELAPSE
+ 
+#Name of the screen-session
+NAME="$CLEAN_NAME"_AUTO_screen
+ 
+#executable files in the following paths that are perhaps needed by the script
+PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/home/pi/bin
+ 
+#your path to the pogram directory
+DIR=/home/pi/bin
+ 
+#Description
+DESC="${CLEAN_NAME}"
+
+#Command
+CMD="/usr/bin/perl /home/pi/bin/hdr.pl >> hdr.log 2>&1"
+ 
+
+function run_as  ()
+{
+        if [[ "X${RUN_AS}" == "X${USER}" ]];then
+                eval "$*"
+        else
+                sudo su ${RUN_AS} -c "$*"
+        fi
+}
+
+case "$1" in
+start)
+   if [[ $(run_as "screen -ls |grep $NAME") ]]
+      then
+      echo "$CLEAN_NAME is already running!"
+   else
+      echo "Starting $DESC: $NAME"
+      run_as "cd $DIR; screen -dmS $NAME $CMD"
+   fi
+   ;;
+stop)
+   if [[ $(run_as "screen -ls |grep $NAME") ]]
+      then
+      echo -n "Stopping $DESC: $NAME"
+      run_as "screen -XS $NAME quit"
+      echo " ... done."
+   else
+      echo "Coulnd't find a running $DESC"
+   fi
+   ;;
+restart)
+   if [[ $(run_as "screen -ls |grep $NAME") ]]
+       then
+      echo -n "Stopping $DESC: $NAME"
+      run_as "screen -XS ${NAME} quit"
+      echo " ... done."
+   else
+      echo "Coulnd't find a running $DESC"
+   fi
+   echo "Starting $DESC: $NAME"
+      run_as "cd $DIR; screen -dmS $NAME $CMD"
+   echo " ... done."
+   ;;
+status)
+   if [[ $(run_as "screen -ls |grep $NAME") ]]
+      then
+      echo "$CLEAN_NAME is RUNNING"
+   else
+      echo "$CLEAN_NAME is DOWN"
+   fi
+   ;;
+*)
+   echo "Usage: $0 {start|stop|status|restart}"
+   exit 1
+   ;;
+esac
+
+exit 0
