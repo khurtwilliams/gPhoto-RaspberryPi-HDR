@@ -1,0 +1,10 @@
+#install gphoto2
+sudo apt-get install gphoto2
+
+#compile usbreset
+cc usbreset.c -o usbreset -lusb
+
+#setup boot time script
+sudo ln ./rc.hdr /etc/init.d/rc.hdr
+cd /etc/init.d/
+sudo update-rc.d rc.hdr defaults
