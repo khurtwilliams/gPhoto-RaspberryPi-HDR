@@ -1,6 +1,10 @@
 *February 2013*
 
-This HDR solution is based on projects and ideas from several places
+This HDR solution is based on projects and ideas from several places.
+
+This project is related to my original blog post here:
+
+http://islandinthenet.com/2013/02/18/hdr-photography-with-a-raspberry-pi/
 
 Project 
 gphoto2-timelapse - dwiel (https://github.com/dwiel) and http://dwiel.net/blog/raspberry-pi-timelapse-camera/
