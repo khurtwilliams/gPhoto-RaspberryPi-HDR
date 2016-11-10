@@ -3,7 +3,7 @@ gPhoto-RaspberryPi-HDR
 
 Utility to capture exposure bracketed images with a Raspberry for use in HDR photography
 
-This project is related to my [blog post](http://islandinthenet.com/2013/02/18/hdr-photography-with-a-raspberry-pi/).
+This project is related to my [blog post](https://islandinthenet.com/hdr-photography-with-raspberry-pi-and-gphoto2/).
 
 *February 2013*
 
@@ -48,4 +48,4 @@ sudo update-rc.d rc.hdr defaults
 
 *ADDITIONAL INFORMATION & AUTHOR*
 
-[HDR PHOTOGRAPHY WITH RASPBERRY PI AND GPHOTO2 – REVISION 2](http://islandinthenet.com/2013/02/18/hdr-photography-with-a-raspberry-pi/)
+[HDR PHOTOGRAPHY WITH RASPBERRY PI AND GPHOTO2 – REVISION 2](https://islandinthenet.com/hdr-photography-with-raspberry-pi-and-gphoto2-revision-2/)
